@@ -25,12 +25,9 @@ public class HttpManager {
 		String direccion = "https://v6.exchangerate-api.com/v6/" + this.apiKey + "/pair/" + fromCurreny + "/"
 				+ toCurrency;
 		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(direccion)).build();
-		try {
-			HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-			return fromJsonToMoneda(response);
-		} catch (Exception e) {
-			throw new RuntimeException("No pude obtener la tasa de conversion");
-		}
+
+		HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+		return fromJsonToMoneda(response);
 	}
 
 	private Moneda fromJsonToMoneda(HttpResponse<String> response) {
