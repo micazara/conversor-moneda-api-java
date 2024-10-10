@@ -37,8 +37,8 @@ public class Operacion {
 
 	@Override
 	public String toString() {
-		return "Operacion: valor convertido=" + valorConvertido + ", resultado=" + resultado + ", moneda base="
-				+ codMonedaBase + ", moneda destino=" + codMonedaDestino + ", fecha y hora=" + fechaHoraActual + "]\n";
+		return "Operacion: valor convertido:" + valorConvertido + ", resultado:" + resultado + ", moneda base:"
+				+ codMonedaBase + ", moneda destino:" + codMonedaDestino + ", fecha y hora:" + fechaHoraActual + "\n";
 	}
 
 }
