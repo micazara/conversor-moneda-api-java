@@ -25,10 +25,11 @@ import com.google.gson.GsonBuilder;
 
 public class Principal {
 
-	public final static String USD = "USD";
-	public final static String ARS = "ARS";
-	public final static String COP = "COP";
-	public final static String BRL = "BRL";
+	public static final String USD = "USD";
+	public static final String ARS = "ARS";
+	public static final String COP = "COP";
+	public static final String BRL = "BRL";
+	public static final String CLP = "CLP";
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		Scanner teclado = new Scanner(System.in);
@@ -42,15 +43,18 @@ public class Principal {
 		monedas.put(4, new String[] { BRL, USD });
 		monedas.put(5, new String[] { USD, COP });
 		monedas.put(6, new String[] { COP, USD });
+		monedas.put(7, new String[] { USD, CLP });
+		monedas.put(8, new String[] { CLP, USD });
 
-		int opcion = 0;
-		while (opcion != 9) {
+		int opcion = 1;
+		while (opcion != 0) {
 			double valorAConvertir;
 			mostrarMensaje("*********************************");
 			mostrarMensaje("¡Bienvenido al conversor de monedas!\n" + "1) Dólar a peso argentino\n"
 					+ "2) Peso argentino a dólar\n" + "3) Dólar a real brasileño\n" + "4) Real brasileño a dólar\n"
-					+ "5) Dólar a peso colombiano\n" + "6) Peso colombiano a dólar\n"
-					+ "7) Ver historial de conversiones\n" + "9) Salir\n" + "Elija una opción valida:");
+					+ "5) Dólar a peso colombiano\n" + "6) Peso colombiano a dólar\n" + "7) Dólar a peso chileno\n"
+					+ "8) Peso chileno a dólar\n" + "9) Ver historial de conversiones\n" + "0) Salir\n"
+					+ "Elija una opción valida:");
 			mostrarMensaje("*********************************");
 			opcion = teclado.nextInt();
 			if (monedas.containsKey(opcion)) {
@@ -72,7 +76,7 @@ public class Principal {
 				} catch (Exception e) {
 					System.out.println("No fue posible realizar la solicitud");
 				}
-			} else if (opcion == 7) {
+			} else if (opcion == 9) {
 				mostrarMensaje(conversiones.getOperaciones().toString());
 			}
 		}
