@@ -5,7 +5,7 @@ Consume la API pública de [ExchangeRate API](https://www.exchangerate-api.com/)
 
 # Índice
 
-- [📌 Características](#características)
+- [📌 Características](#-características)
 - [🛠️ Tecnologías utilizadas](#️-tecnologías-utilizadas)
 - [▶️ Ejecución manual con `javac`](#️-ejecución-manual-con-javac)
 - [🔑 API Key](#-api-key)
